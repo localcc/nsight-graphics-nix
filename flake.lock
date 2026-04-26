@@ -54,11 +54,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1770380644,
-        "narHash": "sha256-P7dWMHRUWG5m4G+06jDyThXO7kwSk46C1kgjEWcybkE=",
+        "lastModified": 1776949667,
+        "narHash": "sha256-GMSVw35Q+294GlrTUKlx087E31z7KurReQ1YHSKp5iw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ae67888ff7ef9dff69b3cf0cc0fbfbcd3a722abe",
+        "rev": "01fbdeef22b76df85ea168fbfe1bfd9e63681b30",
         "type": "github"
       },
       "original": {
@@ -90,16 +90,18 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1770475122,
+        "lastModified": 1777220365,
         "narHash": "sha256-yF4OOZJrnqZ4Fv1aCclZZ2sCpCIHDJmez0lRiF/BmZE=",
-        "rev": "bcf415e5ff2962adff8e7b28b13517e980a89e6f",
-        "revCount": 686,
-        "type": "git",
-        "url": "file:///home/kate/dev/patchelf"
+        "owner": "localcc",
+        "repo": "patchelf",
+        "rev": "d1e87d6b0cc922ac221226c745758994a62655f8",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/kate/dev/patchelf"
+        "owner": "localcc",
+        "ref": "clobber-sections",
+        "repo": "patchelf",
+        "type": "github"
       }
     },
     "root": {
