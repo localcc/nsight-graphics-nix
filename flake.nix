@@ -14,7 +14,10 @@
     {
       packages.${system} =
         let
-          pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
         in
         {
           default = pkgs.stdenv.mkDerivation {
@@ -36,7 +39,7 @@
 
             autoPatchelfIgnoreMissingDeps = [
               "libQt6*"
-            #   "*"
+              #   "*"
             ];
             patchelfFlags = [
               "--no-clobber-old-sections"
@@ -83,7 +86,7 @@
               ./source.run --accept --target source --noexec -- -noprompt
 
               mkdir -p $out/bin
-              
+
               cp -R source/pkg/* $out
 
               rm -rf $out/host/linux-desktop-nomad-x64/Plugins/WarpVizPlugin/Oracle
@@ -93,7 +96,7 @@
               $out/host/linux-desktop-nomad-x64/install-desktop.sh linux "$out" "$out/bin"
               cp -R $out/usr/* $out/
               rm -rf $out/usr
-              
+
 
               runHook preInstall
 
