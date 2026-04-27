@@ -43,6 +43,10 @@
             ];
             appendRunpaths = [
               "/run/opengl-driver/lib"
+              "${pkgs.libxi}/lib"
+              "${pkgs.vulkan-loader}/lib"
+              "${pkgs.wayland}/lib"
+              "${pkgs.libxkbcommon}/lib"
             ];
 
             buildInputs = with pkgs; [
@@ -60,7 +64,9 @@
               libgcc
               libuuid
               glib
+              libxi
               cudaPackages.cuda_cudart
+              vulkan-loader
             ];
 
             dontConfigure = true;
