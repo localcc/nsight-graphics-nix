@@ -22,11 +22,11 @@
         {
           default = pkgs.stdenv.mkDerivation {
             pname = "nsight-graphics";
-            version = "2026.1.0.26067";
+            version = "2026.2.0.26134";
 
             src = pkgs.fetchurl {
-              url = "https://developer.nvidia.com/downloads/assets/tools/secure/nsight-graphics/2026_1_0/linux_x64/NVIDIA_Nsight_Graphics_2026.1.0.26067-linux_x64.run";
-              hash = "sha256-6YhQKVrXxVWrsr29iTv4fbRIvz1RgPOhxLLq3uZ13vo=";
+              url = "https://developer.nvidia.com/downloads/assets/tools/secure/nsight-graphics/2026_2_0/linux_x64/NVIDIA_Nsight_Graphics_2026.2.0.26134-linux_x64.run";
+              hash = "sha256-gXwkSUpxpzidd2E7ZZ7/m3KpdHqendcDUQ9J260QoIk=";
             };
 
             nativeBuildInputs = with pkgs; [
