@@ -4,10 +4,14 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixpkgs-unstable";
     patchelf.url = "github:localcc/patchelf/clobber-sections";
+    src = {
+      url = "https://developer.nvidia.com/downloads/assets/tools/secure/nsight-graphics/2026_3_1/linux_x64/NVIDIA_Nsight_Graphics_2026.3.1.26224-linux_x64.run";
+      flake = false;
+    };
   };
 
   outputs =
-    { nixpkgs, patchelf, ... }:
+    { nixpkgs, patchelf, src, ... }:
     let
       system = "x86_64-linux";
     in
@@ -22,12 +26,9 @@
         {
           default = pkgs.stdenv.mkDerivation {
             pname = "nsight-graphics";
-            version = "2026.2.0.26134";
+            version = "2026.3.1.26224";
 
-            src = pkgs.fetchurl {
-              url = "https://developer.nvidia.com/downloads/assets/tools/secure/nsight-graphics/2026_2_0/linux_x64/NVIDIA_Nsight_Graphics_2026.2.0.26134-linux_x64.run";
-              hash = "sha256-gXwkSUpxpzidd2E7ZZ7/m3KpdHqendcDUQ9J260QoIk=";
-            };
+            src = src;
 
             nativeBuildInputs = with pkgs; [
               (patchelf.packages.${system}.default)
@@ -39,6 +40,7 @@
 
             autoPatchelfIgnoreMissingDeps = [
               "libQt6*"
+              "libtiff.so.5"
               #   "*"
             ];
             patchelfFlags = [
@@ -90,6 +92,7 @@
               cp -R source/pkg/* $out
 
               rm -rf $out/host/linux-desktop-nomad-x64/Plugins/WarpVizPlugin/Oracle
+              rm -f $out/host/linux-desktop-nomad-x64/libboost_*.so*
               find $out -name "*.so*" -type f -exec chmod -x {} +
 
               patchShebangs $out/host/linux-desktop-nomad-x64/install-desktop.sh

@@ -106,7 +106,20 @@
     "root": {
       "inputs": {
         "nixpkgs": "nixpkgs",
-        "patchelf": "patchelf"
+        "patchelf": "patchelf",
+        "src": "src"
+      }
+    },
+    "src": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-F2w1thzIYooURGC6llDbiual/zGgpzLsMMq+AiCqv8Q=",
+        "type": "file",
+        "url": "https://developer.nvidia.com/downloads/assets/tools/secure/nsight-graphics/2026_3_1/linux_x64/NVIDIA_Nsight_Graphics_2026.3.1.26224-linux_x64.run"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://developer.nvidia.com/downloads/assets/tools/secure/nsight-graphics/2026_3_1/linux_x64/NVIDIA_Nsight_Graphics_2026.3.1.26224-linux_x64.run"
       }
     }
   },
